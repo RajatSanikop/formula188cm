@@ -1,0 +1,127 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Formula 188cm - Height Growth Guide" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="sidebar">
+				<div class="logo">Formula 188cm</div>
+				<ul>
+					<li><a href="/">Introduction</a></li>
+					<li><a href="/hgh">HGH Guide</a></li>
+					<li><a href="/sleep">Sleep Optimization</a></li>
+					<li><a href="/diet">Diet & Nutrition</a></li>
+					<li><a href="/exercises">Exercises</a></li>
+					<li><a href="/techniques">Growth Techniques</a></li>
+				</ul>
+			</nav>
+			<main>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #2563eb;
+		--primary-dark: #1d4ed8;
+		--text: #1f2937;
+		--bg: #ffffff;
+		--sidebar: #f3f4f6;
+	}
+	
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	
+	html {
+		font-family: system-ui, sans-serif;
+		background: var(--bg);
+		color: var(--text);
+	}
+
+	.wrapper {
+		display: flex;
+		min-height: 100vh;
+	}
+
+	.sidebar {
+		width: 250px;
+		background: var(--sidebar);
+		padding: 2rem;
+		position: fixed;
+		height: 100vh;
+	}
+
+	.logo {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: var(--primary);
+		margin-bottom: 2rem;
+	}
+
+	.sidebar ul {
+		list-style: none;
+	}
+
+	.sidebar a {
+		display: block;
+		padding: 0.5rem 0;
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.sidebar a:hover {
+		color: var(--primary);
+	}
+
+	main {
+		flex: 1;
+		padding: 2rem;
+		margin-left: 250px;
+		max-width: 900px;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+		color: var(--primary);
+	}
+
+	h2 {
+		font-size: 1.8rem;
+		margin: 2rem 0 1rem;
+		color: var(--primary-dark);
+	}
+
+	p {
+		margin-bottom: 1rem;
+		line-height: 1.6;
+	}
+
+	ul {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	li {
+		margin-bottom: 0.5rem;
+	}
+</style>
